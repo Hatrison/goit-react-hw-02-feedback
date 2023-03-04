@@ -1,8 +1,17 @@
+import PropTypes from 'prop-types';
 import Notification from 'components/Notification';
 import React, { PureComponent } from 'react';
 import { Container, Option } from './Statistics.styled';
 
 export default class Statistics extends PureComponent {
+  static propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.string.isRequired,
+  };
+
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
 
